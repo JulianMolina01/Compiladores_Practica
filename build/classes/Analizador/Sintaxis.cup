@@ -1,0 +1,34 @@
+package Analizador;
+
+import java_cup.runtime.Symbol;
+
+parser code
+{:
+    private Symbol s;
+    
+    public void syntax_error(Symbol s){
+        this.s = s;
+    }
+
+    public Symbol getS(){
+        return this.s;
+}
+:};
+
+terminal ll_apertura, ll_cierre, inte, Identificador, P_coma, charac, igual, mas, coma, INT, comillas;
+
+non terminal INICIO, VARIABLE, DECLARACION;
+
+start with INICIO;
+
+
+INICIO ::= 
+    ll_apertura DECLARACION ll_cierre
+;
+
+DECLARACION ::=
+    VARIABLE Identificador coma DECLARACION | Identificador coma DECLARACION | Identificador mas DECLARACION | Identificador igual DECLARACION | INT P_coma DECLARACION | comillas Identificador comillas P_coma DECLARACION | Identificador P_coma DECLARACION | Identificador P_coma
+;
+VARIABLE ::=
+    inte | charac
+;

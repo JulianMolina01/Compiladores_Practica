@@ -1,0 +1,37 @@
+
+package Analizador;
+
+public enum Tokens {
+    create,
+    database,
+    Identificador,
+    P_coma,
+    espacio,
+    use,
+    table,
+    line,
+    P_apertura,
+    P_cierre,
+    varchar,
+    insert,
+    into,
+    values,
+    comas,
+    update,
+    set,
+    igual,
+    where,
+    delete,
+    from,
+    select,
+    est,
+    drop,
+    inte,
+    charac,
+    coma,
+    mas,
+    ll_apertura,
+    ll_cierre,
+    INT,
+    ERROR
+}
